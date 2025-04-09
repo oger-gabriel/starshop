@@ -2,13 +2,13 @@
 
 namespace App\Controller;
 
-useuseSymfony\Component\HttpFoundation\Response;
-Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
 class MainController
 {
     #[Route]
     public function HomePage(): Response
     {
-        return new Response('<strong>Hello World !</strong>');
+        return new Response("<strong>Hello World !</strong>");
     }
 }
