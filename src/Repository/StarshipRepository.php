@@ -21,4 +21,17 @@ class StarshipRepository
             new Starship("USS Wanderlust (NCC-2024-W)", "Delta Tourist", "Kathryn Journeyway", "under construction"),
         ];
     }
+
+    public function find(int $id): ?Starship
+    {
+        $starships = $this->findAll();
+        foreach ($starships as $index => $starship) {
+            if ($index === $id) {
+                $this->logger->info("vaisseau spatial avec ID {$id} trouvé");
+                return $starship;
+            }
+        }
+        $this->logger->info("aucun vaisseau spatial avec ID {$id} trouvé");
+        return null;
+    }
 }
